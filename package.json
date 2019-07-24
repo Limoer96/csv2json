@@ -1,0 +1,27 @@
+{
+  "name": "csv2jsonfile",
+  "version": "1.0.0",
+  "description": "A Tool convert CSV to JSON or JS Object with no dependencies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "csv",
+    "json",
+    "csvtojson",
+    "readline",
+    "no dependencies"
+  ],
+  "homepage": "https://github.com/xiaomoer/csv2json",
+  "bugs": "https://github.com/xiaomoer/csv2json/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaomoer/csv2json.git"
+  },
+  "author": {
+    "name": "limoer",
+    "email": "myt19960503@outlook.com"
+  },
+  "license": "ISC"
+}
