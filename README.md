@@ -15,8 +15,15 @@ see from [npm package](https://npmjs.org/package/csv2jsonfile).
 
 ## Usage
 
-### CSV to JSON
+> note: the csv file must have header(used as key), like the example below:
+```
+city,level,alias
+Shanghai,3,SH
+Chongqing,3,SQ
+Jinan,4,JN 
+```
 
+### CSV to JSON
 ```javascript
 const csv2jsonfile = require('csv2jsonfile');
 const path = require('path');
@@ -29,6 +36,21 @@ csv2jsonfile(sourcePath, targetPath)
   .catch((err) => {
     console.log(err.message);
   })
+// result in result.json
+/*
+[
+  {
+    city: "Shangehai",
+    level: "3",
+    alias: "SH"
+  },
+  {
+    city: "Chongqing",
+    level: "3",
+    alias: "CQ"
+  },
+]
+*/
 ```
 
 ### CSV to JavaScript Object
