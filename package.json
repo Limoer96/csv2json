@@ -2,8 +2,9 @@
   "name": "csv2jsonfile",
   "version": "1.0.0",
   "description": "A Tool convert CSV to JSON or JS Object with no dependencies.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "jest"
   },
   "keywords": [
@@ -12,6 +13,9 @@
     "csvtojson",
     "readline",
     "no dependencies"
+  ],
+  "files": [
+    "dist"
   ],
   "homepage": "https://github.com/xiaomoer/csv2json",
   "bugs": "https://github.com/xiaomoer/csv2json/issues",
@@ -23,5 +27,14 @@
     "name": "limoer",
     "email": "myt19960503@outlook.com"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^2.0.1",
+    "jest": "^24.9.0",
+    "rollup": "^1.27.14",
+    "rollup-plugin-uglify": "^6.0.4",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {}
 }

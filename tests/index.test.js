@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const csv2jsonfile = require('../index');
+const csv2jsonfile = require('../dist/index');
 
 const sourcePath = path.resolve(__dirname, 'data.csv');
 const targetPath = path.resolve(__dirname, 'result.json');
