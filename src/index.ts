@@ -2,7 +2,6 @@ const readline = require('readline')
 const fs = require('fs')
 import { newLine, space2, space4 } from './const'
 
-
 function _lineRenderWithHeader(line: string[], headers: string[]) {
   let rows: string[] = []
   rows.push(`${space2}{${newLine}`)
@@ -52,7 +51,12 @@ function renderLineInline(line: string, headers?: string[]): string {
   return result
 }
 
-function csv2json(sourcePath: string, targetPath: string, header: boolean = true) {
+interface Options {
+  header: boolean
+  [key: string]:  any
+}
+
+function csv2json(sourcePath: string, targetPath: string, options: Options = { header: true }) {
   return new Promise((resolve, reject) => {
     const exists = fs.existsSync(sourcePath)
     if (!exists) {
@@ -72,6 +76,7 @@ function csv2json(sourcePath: string, targetPath: string, header: boolean = true
     const rl = readline.createInterface({
       input: fRead
     })
+    const { header } = options
     let lineIndex = header ? 0 : 1
     let headerList: string[]
     rl.on('line', line => {
@@ -89,7 +94,7 @@ function csv2json(sourcePath: string, targetPath: string, header: boolean = true
   })
 }
 
-function csv2inlineJson(sourcePath: string, header: boolean = true) {
+function csv2inlineJson(sourcePath: string, options: Options = { header: true }) {
   return new Promise((resolve, reject) => {
     const isExists = fs.existsSync(sourcePath)
     if (!isExists) {
@@ -104,6 +109,7 @@ function csv2inlineJson(sourcePath: string, header: boolean = true) {
       }, 0);
     })
     const rl = readline.createInterface({ input: fRead })
+    const { header } = options
     let columnIndex = header ? 0 : 1
     const bracket = header ? '{}' : '[]'
     let headerList: string[]
