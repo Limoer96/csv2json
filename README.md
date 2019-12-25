@@ -1,6 +1,6 @@
 # csv2jsonfile
 
-![npm](https://img.shields.io/npm/dm/csv2jsonfile)![npm bundle size](https://img.shields.io/bundlephobia/min/csv2jsonfile)
+[![Build Status](https://travis-ci.com/xiaomoer/csv2json.svg?branch=master)](https://travis-ci.com/xiaomoer/csv2json)![npm](https://img.shields.io/npm/dm/csv2jsonfile)![npm bundle size](https://img.shields.io/bundlephobia/min/csv2jsonfile)
 
 > A Tool convert CSV to JSON or JS Object with NO Dependencies.
 
