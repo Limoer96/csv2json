@@ -60,7 +60,7 @@ function csv2json(sourcePath: string, targetPath: string, options: Options = { h
   return new Promise((resolve, reject) => {
     const exists = fs.existsSync(sourcePath)
     if (!exists) {
-      reject(new Error(`${sourcePath} file does not exist.`))
+      throw new Error(`${sourcePath} file does not exist.`)
     }
     if (fs.existsSync(targetPath)) {
       fs.unlinkSync(targetPath)
@@ -99,7 +99,7 @@ function csv2inlineJson(sourcePath: string, options: Options = { header: true })
   return new Promise((resolve, reject) => {
     const isExists = fs.existsSync(sourcePath)
     if (!isExists) {
-      reject(new Error(`${sourcePath} file does not exist.`))
+      throw new Error(`${sourcePath} file does not exist.`)
     }
     let result = ''
     const fRead = fs.createReadStream(sourcePath)
