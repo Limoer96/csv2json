@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const csv2jsonfile = require('../dist/index');
+import csv2jsonfile from '../src/index'
 
 const sourcePath = path.resolve(__dirname, 'data.csv');
 const targetPath = path.resolve(__dirname, 'result.json');
@@ -59,4 +59,20 @@ describe('test csv2jsonfile without header', () => {
         expect(obj).toEqual(expected);
       });
   });
+})
+
+
+describe('test exceptions', () => {
+  test('target file does not exist.', () => {
+    csv2jsonfile(path.resolve(__dirname, 'notexistfilename.csv'))
+      .catch((error) => {
+        expect(error.message).toMatch(/does not exist/)
+      })
+  })
+  test('target file does not exist.', () => {
+    csv2jsonfile.inline(path.resolve(__dirname, 'notexistfilename.csv'))
+      .catch((error) => {
+        expect(error.message).toMatch(/does not exist/)
+      })
+  })
 })

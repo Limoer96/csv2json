@@ -69,10 +69,11 @@ function csv2json(sourcePath: string, targetPath: string, options: Options = { h
     const fRead = fs.createReadStream(sourcePath)
     fRead.on('end', () => {
       setTimeout(() => {
-        fs.appendFileSync(targetPath, `${newLine}`)
+        fs.appendFileSync(targetPath, `${newLine}]`)
         resolve(Date.now() - start)
       }, 0)
     })
+    fs.appendFileSync(targetPath, `[${newLine}`); // add the tag to the left side of the array container
     const rl = readline.createInterface({
       input: fRead
     })
@@ -98,7 +99,7 @@ function csv2inlineJson(sourcePath: string, options: Options = { header: true })
   return new Promise((resolve, reject) => {
     const isExists = fs.existsSync(sourcePath)
     if (!isExists) {
-      reject(new Error(`${sourcePath}file does not exist.`))
+      reject(new Error(`${sourcePath} file does not exist.`))
     }
     let result = ''
     const fRead = fs.createReadStream(sourcePath)

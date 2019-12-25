@@ -1,6 +1,6 @@
 module.exports = {
   collectCoverageFrom: [
-    '<rootDir>/*.js'
+    '<rootDir>/src/*.ts'
   ],
   testMatch: [
     '<rootDir>/tests/*.js'

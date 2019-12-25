@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "keywords": [
     "csv",
@@ -29,7 +29,12 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
     "@rollup/plugin-typescript": "^2.0.1",
+    "@types/jest": "^24.0.24",
+    "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
     "rollup": "^1.27.14",
     "rollup-plugin-uglify": "^6.0.4",
