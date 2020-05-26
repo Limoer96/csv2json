@@ -1,6 +1,6 @@
 {
   "name": "csv2jsonfile",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A Tool convert CSV to JSON or JS Object with no dependencies.",
   "main": "dist/index.js",
   "scripts": {
